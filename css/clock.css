@@ -1,0 +1,34 @@
+html {
+    background-color: black;
+}
+
+body {
+  padding:0;
+  margin:0;
+  font-family:TrebuchetMS,Arial,sans-serif;
+  overflow:hidden;
+}
+
+/* Base nighttime styles */
+.nightmode {
+    background-color: black;
+    color: #fff;
+  }
+
+  /* Used to wrap any lines of text  */
+.clocktext {
+    display: block;
+    margin: 0;
+    padding: 0 0 0 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  #time {
+    font-size: 12rem;
+    margin: 0 0 0 0;
+  }
+  
+  @media (min-width: 480px){
+    #time {font-size: 12rem;}
+  }
