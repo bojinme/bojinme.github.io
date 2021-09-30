@@ -9,26 +9,34 @@ body {
   overflow:hidden;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
 /* Base nighttime styles */
 .nightmode {
-    background-color: black;
-    color: #fff;
-  }
+  background-color: black;
+  color: #fff;
+}
 
   /* Used to wrap any lines of text  */
 .clocktext {
-    display: block;
-    margin: 0;
-    padding: 0 0 0 0;
-    text-align: center;
-    width: 100%;
-  }
+  display: block;
+  margin: 0;
+  padding: 0 0 0 0;
+  text-align: center;
+  width: 100%;
+}
 
-  #time {
-    font-size: 12rem;
-    margin: 0 0 0 0;
-  }
-  
-  @media (min-width: 480px){
-    #time {font-size: 12rem;}
-  }
+#time {
+  font-size: 90vw;
+  margin: 0 0 0 0;
+}
+
+@media (min-width: 480px){
+  #time {font-size: 39vw;}
+}
