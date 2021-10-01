@@ -8,18 +8,20 @@ function init() {
   // dd = document.getElementById("date");
   td = document.getElementById("time");
   updateTime();
-  setInterval(updateTime,1000);
+  setInterval(updateTime,30000);
 }
 
 function updateTime() {
-  var clockdata = getClockStrings();
+  var timeFormat = window.location.hash;
+
+  var clockdata = getClockStrings(timeFormat);
   // dd.innerHTML = clockdata.datehtml;
   td.innerHTML = clockdata.timehtml;
   // dd.dateTime = now.toISOString();
   td.dateTime = now.toISOString();
 }
 
-function getClockStrings() {
+function getClockStrings(timeFormat) {
   now = new Date();
   var year = now.getFullYear();
   var month = months[now.getMonth()];
@@ -31,10 +33,19 @@ function getClockStrings() {
 //   var meridian = hour < 12 ? "AM" : "PM";
 //   var clockhour = hour > 12 ? hour - 12 : hour;
 //   if (hour === 0) {clockhour = 12;}
-    var clockhour = hour < 10 ? "0" + hour : hour;
+  var clockhour = hour < 10 ? "0" + hour : hour;
   var clockminutes = minutes < 10 ? "0" + minutes : minutes;
 //   var clockseconds = seconds < 10 ? "0" + seconds : seconds;
   var datehtml = day + ", " + month + " " + date + ", " + year;
-  var timehtml = clockhour + " " + clockminutes;
+  if(timeFormat=="#hhmm"){
+    var timehtml = clockhour + " " + clockminutes;
+  } else if(timeFormat=="#hh"){
+    var timehtml = clockhour;
+  } else if(timeFormat=="#mm"){
+    var timehtml = clockminutes;
+  } else {
+    var timehtml = clockhour + " " + clockminutes;
+  }
+  
   return {"datehtml":datehtml,"timehtml":timehtml};
 }
